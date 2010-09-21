@@ -13,20 +13,42 @@ set history=50
 set nomodeline
 set printoptions=paper:letter
 set ruler
-set runtimepath=~/.vim,/var/lib/vim/addons,/usr/share/vim/vimfiles,/usr/share/vim/vim72,/usr/share/vim/vimfiles/after,/var/lib/vim/addons/after,~/.vim/after
+set runtimepath=~/.vim,/var/lib/vim/addons,/usr/local/share/vim/vimfiles,/usr/local/share/vim/vim73,/usr/local/share/vim/vimfiles/after,/var/lib/vim/addons/after,~/.vim/after
 set suffixes=.bak,~,.swp,.o,.info,.aux,.log,.dvi,.bbl,.blg,.brf,.cb,.ind,.idx,.ilg,.inx,.out,.toc
 " vim: set ft=vim :
+
+au BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$") |
+                         \ exe "normal g'\"" | endif
+
+syntax on
+set nocompatible
+set hlsearch
+set incsearch
+set showmatch
+
 set hidden
 set expandtab
 set tabstop=2
+set softtabstop=2
 set shiftwidth=2
+"set number
 
-" Set smart indenting
+set encoding=utf-8
 set smartindent
+set scrolloff=3
+set wildmenu
+set wildmode=list:longest
+set ttyfast
+set laststatus=2
+"set relativenumber
+set undofile
+
+let g:ackprg="ack-grep -H --nocolor --nogroup --column"
 
 " Key Mappings
+let mapleader = ","
+nnoremap <leader><space> :noh<cr>
 map <C-D> :NERDTreeToggle<CR>
-map <C-T> :FufFile<CR>
 
 map <C-h> <C-w>h
 map <C-j> <C-w>j
