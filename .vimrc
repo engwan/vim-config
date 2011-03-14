@@ -20,6 +20,11 @@ set suffixes=.bak,~,.swp,.o,.info,.aux,.log,.dvi,.bbl,.blg,.brf,.cb,.ind,.idx,.i
 au BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$") |
                          \ exe "normal g'\"" | endif
 
+set ffs=unix
+"set number
+"set relativenumber
+"set undofile
+
 syntax on
 set nocompatible
 set hlsearch
@@ -31,7 +36,6 @@ set expandtab
 set tabstop=2
 set softtabstop=2
 set shiftwidth=2
-"set number
 
 set encoding=utf-8
 set smartindent
@@ -40,14 +44,28 @@ set wildmenu
 set wildmode=list:longest
 set ttyfast
 set laststatus=2
-"set relativenumber
-set undofile
+
+set fileformats=unix
+
+highlight ExtraWhitespace ctermbg=red guibg=red
+au InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
+au InsertLeave * match ExtraWhitespace /\s\+$/
+au BufEnter * match ExtraWhitespace /\s\+$/
+
+" Removes trailing spaces
+function TrimWhiteSpace()
+  %s/\s*$//
+  ''
+endfunction
 
 let g:ackprg="ack-grep -H --nocolor --nogroup --column"
 
 " Key Mappings
 let mapleader = ","
+
 nnoremap <leader><space> :noh<cr>
+map <leader><leader> :call TrimWhiteSpace()<CR>
+map <leader>u :e ++ff=dos<CR>:setlocal ff=unix<CR>
 map <C-D> :NERDTreeToggle<CR>
 
 map <C-h> <C-w>h
