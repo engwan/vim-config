@@ -13,7 +13,7 @@ set history=50
 set nomodeline
 set printoptions=paper:letter
 set ruler
-set runtimepath=~/.vim,/var/lib/vim/addons,/usr/local/share/vim/vimfiles,/usr/local/share/vim/vim73,/usr/local/share/vim/vimfiles/after,/var/lib/vim/addons/after,~/.vim/after
+set runtimepath=~/.vim,/var/lib/vim/addons,/usr/share/vim/vimfiles,/usr/share/vim/vim73,/usr/share/vim/vimfiles/after,/var/lib/vim/addons/after,~/.vim/after
 set suffixes=.bak,~,.swp,.o,.info,.aux,.log,.dvi,.bbl,.blg,.brf,.cb,.ind,.idx,.ilg,.inx,.out,.toc
 " vim: set ft=vim :
 
@@ -66,7 +66,8 @@ let mapleader = ","
 nnoremap <leader><space> :noh<cr>
 map <leader><leader> :call TrimWhiteSpace()<CR>
 map <leader>u :e ++ff=dos<CR>:setlocal ff=unix<CR>
-map <C-D> :NERDTreeToggle<CR>
+
+set showbreak=↪
 
 map <C-h> <C-w>h
 map <C-j> <C-w>j
