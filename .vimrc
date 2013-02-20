@@ -48,6 +48,9 @@ set laststatus=2
 set fileformats=unix
 
 set runtimepath^=~/.vim/bundle/ctrlp.vim
+set runtimepath^=~/.vim/bundle/powerline/bindings/vim
+
+set t_Co=256
 
 highlight ExtraWhitespace ctermbg=red guibg=red
 au InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
