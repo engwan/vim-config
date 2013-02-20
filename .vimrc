@@ -47,6 +47,8 @@ set laststatus=2
 
 set fileformats=unix
 
+set runtimepath^=~/.vim/bundle/ctrlp.vim
+
 highlight ExtraWhitespace ctermbg=red guibg=red
 au InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
 au InsertLeave * match ExtraWhitespace /\s\+$/
@@ -59,6 +61,9 @@ function TrimWhiteSpace()
 endfunction
 
 let g:ackprg="ack-grep -H --nocolor --nogroup --column"
+let g:ctrlp_cmd = 'CtrlPMixed'
+" Sane Ignore For ctrlp
+let g:ctrlp_custom_ignore = {'dir':  '\.git$\|\.hg$\|\.svn$\|\.yardoc\|public\/images\|public\/system\|data\|log\|tmp$'}
 
 " Key Mappings
 let mapleader = ","
