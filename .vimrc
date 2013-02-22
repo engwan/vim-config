@@ -1,4 +1,4 @@
-version 6.0
+version 7.3
 if &cp | set nocp | endif
 let s:cpo_save=&cpo
 set cpo&vim
@@ -17,8 +17,10 @@ set runtimepath=~/.vim,/var/lib/vim/addons,/usr/share/vim/vimfiles,/usr/share/vi
 set suffixes=.bak,~,.swp,.o,.info,.aux,.log,.dvi,.bbl,.blg,.brf,.cb,.ind,.idx,.ilg,.inx,.out,.toc
 " vim: set ft=vim :
 
-au BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$") |
-                         \ exe "normal g'\"" | endif
+filetype plugin indent on
+filetype detect
+
+au BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$") | exe "normal g'\"" | endif
 
 set ffs=unix
 "set number
