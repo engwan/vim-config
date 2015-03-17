@@ -43,6 +43,8 @@ let g:ctrlp_custom_ignore = {'dir': '\.git$\|\.hg$\|\.svn$\|\.yardoc\|node_modul
 
 let g:mustache_abbreviations = 1
 
+let g:NERDTreeWinSize = 40
+
 map <C-n> :NERDTreeToggle<CR>
 
 set nocompatible
