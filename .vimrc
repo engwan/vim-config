@@ -57,6 +57,9 @@ set softtabstop=2
 set shiftwidth=2
 set expandtab
 
+set wildmenu
+set wildmode=list:longest
+
 set backspace=indent,eol,start
 
 set hlsearch
@@ -70,6 +73,8 @@ syntax on
 
 set t_Co=256
 colorscheme jellybeans
+
+autocmd BufNewFile,BufRead *.axlsx  set syntax=ruby
 
 " Hightlight extra whitespaces
 highlight ExtraWhitespace ctermbg=red guibg=red
