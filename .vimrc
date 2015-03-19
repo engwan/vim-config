@@ -39,7 +39,7 @@ NeoBundleCheck
 "End NeoBundle Scripts-------------------------
 
 " Sane Ignore For ctrlp
-let g:ctrlp_custom_ignore = {'dir': '\.git$\|\.hg$\|\.svn$\|\.yardoc\|node_modules\|bower_components\|public\/images\|public\/system\|data\|log\|tmp$'}
+let g:ctrlp_custom_ignore = {'dir': '\.git$\|\.hg$\|\.svn$\|\.yardoc\|node_modules\|bower_components\|public\/images\|public\/system\|log$\|tmp$'}
 
 let g:mustache_abbreviations = 1
 
