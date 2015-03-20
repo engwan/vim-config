@@ -47,6 +47,9 @@ let g:NERDTreeWinSize = 40
 
 map <C-n> :NERDTreeToggle<CR>
 
+" Allow switching buffers without saving
+set hidden
+
 set nocompatible
 set ruler
 
