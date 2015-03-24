@@ -60,6 +60,9 @@ set softtabstop=2
 set shiftwidth=2
 set expandtab
 
+" PHP Settings
+autocmd BufRead,BufNewFile *.php set sw=3 sts=3 ts=3
+
 set wildmenu
 set wildmode=list:longest
 
